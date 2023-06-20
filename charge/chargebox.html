@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="/charge/charge.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+
+    <nav>
+        <span class="section section1">
+            <img src="/charge/img/logo.png" alt="">
+        </span>
+        <button class="section section2">마이룸</button>
+        <button class="section section3">구매</button>
+        <button class="section section4">충전</button>
+        <div class="section section5">
+            <p>@@@님, 환영합니다!</p>
+            <button id="logoutButton">로그아웃</button>
+        </div>
+    </nav>
+    <div class="entire" id="117:681">
+        <div class="orangebg_L" id="117:685">
+            <div class="whitebg_L" id="117:687">
+                <div class="whitebg_M">
+                    <div class="charge" id="117:697">도토리충전</div>
+                    <div class="orangebg_M" id="117:689">
+                        <div class="box1" id="117:692">
+                            <div class="divbox1" id="117:710">
+                                <div class="chargeBox">
+                                    <div class="chargeName">충 전 하 기</div>
+                                    <p>내 도토리 count개</p>
+                                    <p class="dotori">충전할 도토리를 클릭해주세요</p>
+                                    <div class="chargeSel">
+                                        <button class="chargeSelBox1">
+                                            <span> <img src="/charge/img/bamto.png" alt=""></span>
+                                            <span class="bamtoL">10개</span>
+                                            <span class="bamtoR">1000원</span>
+                                        </button>
+                                    
+                                        <button class="chargeSelBox1" >
+                                            <span> <img src="/charge/img/bamto.png" alt=""></span>
+                                            <span class="bamtoL">30개</span>
+                                            <span class="bamtoR">3000원</span>
+                                        </button>
+                                        <button class="chargeSelBox1">
+                                            <span> <img src="/charge/img/bamto.png" alt=""></span>
+                                            <span class="bamtoL">50개</span>
+                                            <span class="bamtoR">5000원</span>
+                                        </button>
+                                        <button class="chargeSelBox1">
+                                            <span> <img src="/charge/img/bamto.png" alt=""></span>
+                                            <span class="bamtoL">100개</span>
+                                            <span class="bamtoR">10000원</span>
+                                        </button>
+                                    </div>
+
+                                    <script>
+                                        // JavaScript로 버튼을 선택합니다.
+                                        var buttons = document.getElementsByClassName("chargeSelBox1");
+                                        
+                                        for(let i = 0; i < buttons.length; i++) {
+                                            buttons[i].addEventListener("click", (e) => {
+                                                
+                                                console.log(e.target);
+                                                // 버튼이 클릭되었을 때 실행되는 동작을 정의합니다.
+                                                alert("버튼이 클릭되었습니다!");
+                                            });
+                                        }
+                                
+                                    </script>
+                                </div>
+
+                            </div>
+                            <div class="divbox2">
+                                <p class="divbox2charge">충 전 내 역</p>
+                                <table>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>날짜</th>
+                                        <th>금액</th>
+                                        <th>개수</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>date</td>
+                                        <td>money</td>
+                                        <td>cnt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>date</td>
+                                        <td>money</td>
+                                        <td>cnt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>date</td>
+                                        <td>money</td>
+                                        <td>cnt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>date</td>
+                                        <td>money</td>
+                                        <td>cnt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>date</td>
+                                        <td>money</td>
+                                        <td>cnt</td>
+                                    </tr>
+                                </table>
+                                <p class="cap">최대 5개까지 출력됩니다</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
