@@ -35,7 +35,8 @@
             border: solid white 3px;
             margin-right: 5px;
             font-size: 19px;
-            color: #5e5c5c;
+            color: #ffffff;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
         }
 
         #content {
@@ -64,6 +65,7 @@
             align-items: center;
             margin-top: 4px;
             border: solid #ff8d1c 1px;
+
         }
 
         #chargebox {
@@ -99,15 +101,15 @@
 </head>
 <body>
 <div id="banner">
-    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png"
+    <img id="logo" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png"
          style="height: 100%" alt="">
-    <div class="bannerbutton" style="background-color: rgba(255,209,190,0.81)">마이룸</div>
-    <div class="bannerbutton">구매</div>
-    <div class="bannerbutton">충전</div>
+    <div class="bannerbutton " id="myroom" >마이룸</div>
+    <div class="bannerbutton" id="purchase" style="background-color: rgba(255,209,190,0.81)">구매</div>
+    <div class="bannerbutton" id="charge" >충전</div>
     <div class="logoutbox" style="position: absolute; top: 10px;right: 11px ">
         <p style="margin-bottom: 3px;margin-top: 4px;font-size: 13px;
             color: #5e5c5c;">김은석님 환영합니다</p>
-        <button style="background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;border: none">
+        <button id="logout" style=" background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;">
             로그아웃
         </button>
 
@@ -125,17 +127,21 @@
     <div style="height: 50px"></div>
     <div id="content">
         <div>
-            <div class="leftbanner" style="background-color: white;color: #c71a01;font-weight: bold">마이룸</div>
-            <div class="leftbanner" style="font-weight: bold">미니미</div>
-            <div class="leftbanner" style="background-color: white;color: #c71a01;font-weight: bold">BGM</div>
+            <div class="leftbanner"  id="leftsmallmyroom"  style="background-color: white;color: #c71a01;font-weight: bold">마이룸</div>
+            <div class="leftbanner" id="leftsmallminimi"  style="background-color: white;color: #c71a01;font-weight: bold">미니미</div>
+            <div class="leftbanner"  id="leftsmallbgm"  style="font-weight: bold">BGM</div>
+
+
+
+
         </div>
         <!--        전체상자-->
         <div id="chargebox" style="display: flex;">
 
-            <div style="width: 8%; height: 90%; background-color: #ffffff; margin-right: 7px;display: flex;align-items: center;justify-content: center;flex-direction: column; border: solid #ff8d1c 1px; margin-left: 10px; border-radius: 5px">
+            <div style="width: 8%; height: 90%; background-color: #ffffff; margin-right: 7px;display: flex;align-items: center;justify-content: center;flex-direction: column; border: solid #ffffff 1px; margin-left: 10px; border-radius: 5px">
 
                 <button style="width: 60px ;height:30px;margin-bottom: 20px; background-color: #eeb063; border-radius: 5px; display: flex; align-content: center; text-align: center; justify-content: center;align-items: center; ">
-                    팝음악
+                    악
                 </button>
 
                 <button style="width: 60px ;height:30px;margin-bottom: 20px; background-color: #eeb063; border-radius: 5px; display: flex; align-content: center; text-align: center; justify-content: center;align-items: center; ">
@@ -146,21 +152,21 @@
             </div>
             <!--            왼쪽박스 아웃라인-->
 
-            <div style="width: 38%; height: 90%; background-color: #00ffec; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 8px">
+            <div style="width: 38%; height: 90%; background-color: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 8px; border: solid #ea6e23 2px">
                 <!--왼쪽큰박스중 첫번째박스-->
                 <div class="secondbox"
-                     style="width: 94%; height: 80%; background-color: #ff0000; margin-right: 7px;display: flex;padding: 10px;  flex-direction: column  ">
+                     style="width: 94%; height: 80%; background-color: #ffffff; margin-right: 4px;display: flex;;  flex-direction: column; justify-content: center; align-items: center">
 
 
-                    <div style="  width: 98%;height: 40%;background-color: #999999;display: flex;border: solid black 2px;margin-top: 5px">
+                    <div style="  width: 98%;height: 40%;background-color: #ffdbdb;display: flex;border: solid black 2px;margin-top: 5px">
                         <!--                    앨범커버들어있는곳-->
-                        <div style="width: 40%;height: 100%;background-color: #ffffff; display: flex;justify-content: center;align-items: center">
+                        <div style="width: 40%;height: 100%;background-color: #ffdbdb; display: flex;justify-content: center;align-items: center">
                             <img style="width: 120px;height: 120px"
                                  src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
                                  alt="">
                         </div>
                         <!--                    대표음악, 플레이어가 있는곳-->
-                        <div style="width: 60%;height: 100%;background-color: #ffffff; display: flex; flex-direction: column;justify-content: center">
+                        <div style="width: 60%;height: 100%;background-color: #ffdbdb; display: flex; flex-direction: column;justify-content: center">
 
 
                             <div style="margin-left: 10px; width: 120px; height: 30px; background-color: #ea6e23;text-align: center;display: flex;align-items: center;justify-content: center;border-radius: 4px;margin-bottom: 4px">
@@ -179,9 +185,11 @@
                     </div>
 
 
+
+<!--                    음악리스트-->
                     <div id="leftmusiclist"
-                         style="width: 100%;height: 50%;background-color: #b01fff;display: flex;justify-content: center;align-items: center;flex-direction: column; ">
-                        <p>내가 가지고있는 음악 목록</p>
+                         style="width: 100%;height: 50%;background-color: #ffffff;display: flex;justify-content: center;align-items: center;flex-direction: column; margin-top: 20px ">
+
                         <table>
                             <tr>
                                 <td style="display: flex;justify-content: center;align-items: center"><img
@@ -196,7 +204,7 @@
 
                                 <td>3:53</td>
                                 <td style="display: flex; justify-content: center">
-                                    <input type="radio">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
 
@@ -207,8 +215,8 @@
                                 <td>alicia Keys-No one</td>
 
                                 <td>3:53</td>
-                                <td>
-                                    <button>적용하기</button>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
 
@@ -219,8 +227,8 @@
                                 <td>alicia Keys-No one</td>
 
                                 <td>3:53</td>
-                                <td>
-                                    <button>적용하기</button>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
                             <tr>
@@ -230,8 +238,8 @@
                                 <td>alicia Keys-No one</td>
 
                                 <td>3:53</td>
-                                <td>
-                                    <button>적용하기</button>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
                             <tr>
@@ -241,8 +249,8 @@
                                 <td>alicia Keys-No one</td>
 
                                 <td>3:53</td>
-                                <td>
-                                    <button>적용하기</button>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
 
@@ -253,8 +261,8 @@
                                 <td>alicia Keys-No one</td>
 
                                 <td>3:53</td>
-                                <td>
-                                    <button>적용하기</button>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
                                 </td>
                             </tr>
 
@@ -268,10 +276,11 @@
                 </div>
                 <!--왼쪽큰박스중 구매버튼잇는곳박스-->
 
+<!--                아래 버튼 있는 박스-->
                 <div class="1"
-                     style="width: 94%; height: 10%; background-color: #ff00f8; margin-right: 7px;display: flex;padding: 10px ">
+                     style="width: 94%; height: 10%; margin-right: 7px;display: flex;padding: 10px; display: flex; justify-content: center ">
 
-
+<button style="width: 100px; height: 30px">구매하기</button>
                 </div>
 
 
@@ -280,14 +289,158 @@
             <!--오른쪽박스-->
             <div style="width: 48%; height: 90%; background-color: #ffffff; margin-right: 7px; display: flex; justify-content: center; flex-direction: column; align-items: center">
                 <div style="margin: 4px">홈피적용음악 top5</div>
+
+
                 <!--    오른쪽박스 안 첫번째박스-->
                 <div style="width: 90%; height: 60%; background-color: #0011ff; display: flex; align-items: center; flex-direction: column; ">
 
 
-                </div>
-                <div style="margin: 4px">소유한미니미</div>
-                <div style="width: 90%; height: 40%; background-color: #ff0000; display: flex; align-items: center; flex-direction: column; ">
+                    <div id="rightuppermusiclist"
+                         style="width: 100%;height: 100%;background-color: #ffffff;display: flex;justify-content: center;align-items: center;flex-direction: column; border: solid #ea6e23 2px ">
 
+                        <table>
+                            <tr>
+                                <td style="display: flex;justify-content: center;align-items: center"><img
+                                        style="width: 20px;height: 20px"
+                                        src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                        alt="">
+                                    <div style=" margin: 3px;  width: 40px;height: 20px;background-color: #ff5c43;border-radius: 2px;text-align: center">
+                                        재생중
+                                    </div>
+                                </td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img style="width: 20px;height: 20px"
+                                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                         alt=""></td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img style="width: 20px;height: 20px"
+                                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                         alt=""></td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img style="width: 20px;height: 20px"
+                                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                         alt=""></td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img style="width: 20px;height: 20px"
+                                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                         alt=""></td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><img style="width: 20px;height: 20px"
+                                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                         alt=""></td>
+                                <td>alicia Keys-No one</td>
+
+                                <td>3:53</td>
+                                <td style="display: flex; justify-content: center">
+                                    <input type="radio" name="music">
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+                <div style="margin: 4px">소유한음악</div>
+
+                <!--    오른쪽박스 안 두번째박스-->
+
+                <div style="border: solid orange 2px; width: 90%; height: 40%; background-color: #ffffff; display: flex; align-items: center; flex-direction: column; justify-content: center">
+                    <div style="margin-bottom: 10px; font-weight: bold; font-size: 17px; color: #ff0000 ">-이전-</div>
+
+                    <table>
+                        <tr>
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+                        </tr>
+
+                        <tr>
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+                        </tr>
+
+                        <tr>
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+                        </tr>
+
+                        <tr>
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+
+                            <td><img style="width: 20px;height: 20px"
+                                     src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdVjgLN%2FbtskRRI7oRu%2FZNekfirNZcJHBQXO3fkylK%2Fimg.jpg"
+                                     alt=""></td>
+                            <td style="width: 140px">alicia Keys-No one</td>
+                        </tr>
+
+
+                    </table>
+
+                    <div style="margin-top: 10px; font-weight: bold; font-size: 17px; color: #ff0000 ">-이전-</div>
 
                 </div>
 
@@ -302,6 +455,39 @@
 </body>
 
 <script>
+    $("#enterbutton").click(function (){
+        alert("홈피들어가기");
+    });
+
+    $("#myroom").click(function (){
+        alert("마이룸들어가기");
+    });
+    $("#purchase").click(function (){
+        alert("구매들어가기");
+    });
+    $("#charge").click(function (){
+        alert("충전들어가기");
+    });
+    $("#logout").click(function (){
+        alert("로그아웃버튼");
+    });
+
+    $("#logo").click(function (){
+        alert('로고눌러서 홈가는버튼');
+    });
+
+
+    $("#leftsmallmyroom").click(function (){
+        alert('왼쪽 견출지 버튼 눌러서 마이룸가는거');
+    });
+    $("#leftsmallminimi").click(function (){
+        alert('왼쪽 견출지 버튼 눌러서 미니미가는거');
+    });
+
+    $("#leftsmallbgm").click(function (){
+        alert('왼쪽 견출지 버튼 눌러서 비지엠가는거');
+    });
+
 
 </script>
 </html>

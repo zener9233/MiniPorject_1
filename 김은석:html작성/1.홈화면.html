@@ -34,7 +34,8 @@
             border: solid white 3px;
             margin-right: 5px;
             font-size: 19px;
-            color: #5e5c5c;
+            color: #ffffff;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
         }
 
         #content {
@@ -104,13 +105,13 @@
 <body>
 
 <div id="banner">
-    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png" style="height: 100%" alt="">
-    <div class="bannerbutton">마이룸</div>
-    <div class="bannerbutton">구매</div>
-    <div class="bannerbutton" >충전</div>
+    <img  id="logo" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png" style="height: 100%" alt="">
+    <div class="bannerbutton " id="myroom">마이룸</div>
+    <div class="bannerbutton" id="purchase">구매</div>
+    <div class="bannerbutton" id="charge" >충전</div>
     <div class="logoutbox" style="position: absolute; top: 10px;right: 11px ">
         <p style="margin-bottom: 3px;margin-top: 4px;font-size: 13px;color: #5e5c5c">김은석님 환영합니다</p>
-        <button style="background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;border: none">
+        <button id="logout" style=" background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;">
             로그아웃
         </button>
 
@@ -137,12 +138,12 @@
                         src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbSXLkK%2FbtskQimK94Y%2F1UQXpfIXVpe836e44MtVi1%2Fimg.png"
                         alt=""></div>
                 <div id="rightinfo">
-                    <p>이름 : <span style="color: #ff3100; font-weight: bold">김은석</span></p>
-                    <p>Today : <span style="color: #ff3100; font-weight: bold">43</span></p>
-                    <p>NewComment:<span style="color: #ff3100; font-weight: bold">9</span></p>
-                    <p>일촌신청:<span style="color: #ff3100; font-weight: bold">10</span></p>
-                    <p>로그인중인일촌:<span style="color: #ff3100; font-weight: bold">24</span></p>
-                    <p>판매요청:<span style="color: #ff3100; font-weight: bold">19</span></p>
+                    <p>이름 : <span  style="color: #ff3100; font-weight: bold">김은석</span></p>
+                    <p>Today : <span  style="color: #ff3100; font-weight: bold">43</span></p>
+                    <p>NewComment:<span  style="color: #ff3100; font-weight: bold">9</span></p>
+                    <p>일촌신청:<span  style="color: #ff3100; font-weight: bold">10</span></p>
+                    <p>로그인중인일촌:<span  style="color: #ff3100; font-weight: bold">24</span></p>
+                    <p>판매요청:<span  style="color: #ff3100; font-weight: bold">19</span></p>
                 </div>
             </div>
 
@@ -150,7 +151,7 @@
     </div>
 
     <div id="systemoutoutline" style="display: flex; justify-content: center">
-        <button style="background-color: #ea6e23;width: 550px;height: 50px; box-shadow: none;border: none; border-radius: 8px; margin-top: 20px;color: white;font-size: 20px;font-weight: bold">
+        <button id="enterbutton" style="background-color: #ea6e23;width: 550px;height: 50px; box-shadow: none;border-radius: 8px; margin-top: 20px;color: white;font-size: 20px;font-weight: bold">
             System.out.println(Hello.world)
         </button>
 
@@ -164,6 +165,28 @@
 </body>
 
 <script>
+
+    $("#enterbutton").click(function (){
+        alert("홈피들어가기");
+    });
+
+    $("#myroom").click(function (){
+        alert("마이룸들어가기");
+    });
+    $("#purchase").click(function (){
+        alert("구매들어가기");
+    });
+    $("#charge").click(function (){
+        alert("충전들어가기");
+    });
+    $("#logout").click(function (){
+        alert("로그아웃버튼");
+    });
+    $("#logo").click(function (){
+        alert('로고눌러서 홈가는버튼');
+    })
+
+
 
 </script>
 </html>

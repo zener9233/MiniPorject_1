@@ -35,7 +35,8 @@
             border: solid white 3px;
             margin-right: 5px;
             font-size: 19px;
-            color: #5e5c5c;
+            color: #ffffff;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
         }
 
         #content {
@@ -92,17 +93,17 @@
 </head>
 <body>
 <div id="banner">
-    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png"
+    <img id="logo" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcdF9J4%2FbtskRufcTKP%2FmAHqe1WxB0eyLRqjxKR5kK%2Fimg.png"
          style="height: 100%" alt="">
     <div class="bannerbutton" style="background-color: rgba(255,209,190,0.81)">마이룸</div>
-    <div class="bannerbutton">구매</div>
-    <div class="bannerbutton">충전</div>
-    <div class="logoutbox" style="position: absolute; top: 10px;right: 11px ">
+    <div class="bannerbutton " id="myroom" style="background-color: rgba(255,209,190,0.81)">마이룸</div>
+    <div class="bannerbutton" id="purchase">구매</div>
+    <div class="bannerbutton" id="charge" >충전</div>
         <p style="margin-bottom: 3px;margin-top: 4px;font-size: 13px;
             color: #5e5c5c;">김은석님 환영합니다</p>
-        <button style="background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;border: none">
-            로그아웃
-        </button>
+    <button id="logout" style=" background-color: white; height: 20px; width: 80px; text-align: center; display: flex; justify-content: center; align-items: center; border-radius: 4px; position: absolute;right: 0;">
+        로그아웃
+    </button>
 
     </div>
 </div>
@@ -118,9 +119,13 @@
     <div style="height: 50px"></div>
     <div id="content">
         <div>
-            <div class="leftbanner" style="background-color: white;color: #c71a01; font-weight: bold">회원정보</div>
-            <div class="leftbanner" style="background-color: white;color: #c71a01;font-weight: bold">마이룸</div>
-            <div class="leftbanner" style="font-weight: bold">BGM</div>
+            <div class="leftbanner" id="smalluseriinfo" style="background-color: white;color: #c71a01; font-weight: bold">회원정보</div>
+            <div class="leftbanner"  id="smallmyroom" style="background-color: white;color: #c71a01;font-weight: bold">마이룸</div>
+            <div class="leftbanner"  id="smallbgm"  style="font-weight: bold">BGM</div>
+
+
+
+
         </div>
 <!--        전체상자-->
         <div id="chargebox" style="display: flex;">
@@ -309,6 +314,41 @@
 </body>
 
 <script>
+
+
+    $("#myroom").click(function (){
+        alert("마이룸들어가기");
+    });
+    $("#purchase").click(function (){
+        alert("구매들어가기");
+    });
+    $("#charge").click(function (){
+        alert("충전들어가기");
+    });
+    $("#logout").click(function (){
+        alert("로그아웃버튼");
+    });
+
+    $("#logo").click(function (){
+        alert('로고눌러서 홈가는버튼');
+    });
+
+
+    $("#smalluseriinfo").click(function (){
+        alert('왼쪽 견출지배너 회원정보 가는버튼');
+    });
+    $("#smallmyroom").click(function (){
+        alert('왼쪽 견출지배너 마이룸 가는버튼');
+    });
+    $("#smallbgm").click(function (){
+        alert('왼쪽 견출지배너 bgm 가는버튼');
+    });
+
+
+
+
+
+
 
 </script>
 </html>
