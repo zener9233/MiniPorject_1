@@ -15,11 +15,11 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Long id;
+    private Long id; //이것은 고유값입니다.
 
 
     @Column(name = "userName", unique = true)
-    private String userName;
+    private String userName; //이 친구가 회원가입의 "아이디" 입니다.
 
     @Column(name = "password")
     private String password;

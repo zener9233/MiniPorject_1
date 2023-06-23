@@ -18,6 +18,7 @@ import java.util.Map;
 @Controller
 public class UserController {
 
+    //의존성 주입
     private final MemberService memberService;
     private final MemberRepository memberRepository;
 
