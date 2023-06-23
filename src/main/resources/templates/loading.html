@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WELECOME!</title>
+  <link rel="stylesheet" href="/CSS/loading.css">
+</head>
+<body>
+<div class="wrapper">
+  <h1>Hello there!</h1>
+</div>
+<div class="welcome-section content-hidden">
+  <div class="content-wrap">
+    <ul class="fly-in-text">
+      <li>H</li>
+      <li>E</li>
+      <li>L</li>
+      <li>L</li>
+      <li>O</li>
+    </ul>
+    <a href="../templates/Login.html" class="enter-button">Enter</a>
+  </div>
+</div>
+
+<script>
+
+  $(function(){
+    let welcomeSection = $('.welcome-section'),
+            enterButton = welcomSection.find('.enter-button');
+
+    setTimeout(function(){
+      welcomeSection.removeClass('content-hidden');
+    },800);
+
+    enterButton.on('click',function(e){
+      e.preventDefault();
+      welcomeSection.addClass('content-hidden').fadeOut();
+    })
+  })
+</script>
+
+
+</body>
+</html>
