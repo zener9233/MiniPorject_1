@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Libre+Baskerville&family=Single+Day&family=Stylish&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -192,6 +193,7 @@
                     <div class="bamtoline"><img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fsc6Aq%2FbtskQR9PYhP%2FgQ6HFXtN7q9IfJgyUDDjZ0%2Fimg.png"
                             style="width: 30px; height: 30px" alt="">
+                        <input type="radio" name="cp_item" value="5000">
                         <pre>  </pre>
                         <div style="background-color: #ea8a8a;height: 4px; margin-top: 4px"></div>
                         10개 1000원
@@ -199,27 +201,33 @@
                     <div class="bamtoline"><img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fsc6Aq%2FbtskQR9PYhP%2FgQ6HFXtN7q9IfJgyUDDjZ0%2Fimg.png"
                             style="width: 30px; height: 30px" alt="">
+                        <input type="radio" name="cp_item" value="5000">
+
                         <pre>  </pre>
-                        20개 1000원
+                        50개 5000원
                     </div>
                     <div class="bamtoline"><img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fsc6Aq%2FbtskQR9PYhP%2FgQ6HFXtN7q9IfJgyUDDjZ0%2Fimg.png"
                             style="width: 30px; height: 30px" alt="">
+                        <input type="radio" name="cp_item" value="10000">
+
                         <pre>  </pre>
-                        30개 1000원
+                        100개 10000원
                     </div>
                     <div class="bamtoline"><img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fsc6Aq%2FbtskQR9PYhP%2FgQ6HFXtN7q9IfJgyUDDjZ0%2Fimg.png"
                             style="width: 30px; height: 30px" alt="">
+                        <input type="radio" name="cp_item" value="10000">
+
                         <pre>  </pre>
-                        40개 10000원
+                        500개 50000원
                     </div>
                     <div style="height: 10px"></div>
-                    <button style="width: 100px;height: 30px;background-color: #f3a354; display: flex; align-content: center; justify-content: center; align-items: center; border-radius: 4px;">
+                    <button  class="button_charge" id="charge_kakao"  style="width: 100px;height: 30px;background-color: #f3a354; display: flex; align-content: center; justify-content: center; align-items: center; border-radius: 4px;">
                         충전하기
                     </button>
 
-
+                    <div id="totalAmountOutput"></div>
                 </div>
 
 
@@ -293,6 +301,53 @@
 
     $("#logo").click(function (){
         alert('로고눌러서 홈가는버튼');
-    })
+    });
+
+
+
+
+        let totalAmount = 0;
+        $('#charge_kakao').click(function () {
+        var IMP = window.IMP;
+        IMP.init("imp50046755");
+        var money = $('input[name="cp_item"]:checked').val();
+        console.log(money);
+        IMP.request_pay({
+        pg: "kcp",
+        merchant_uid: 'merchant_' + new Date().getTime(),
+
+        name: 'dotori',
+        amount: money,
+        buyer_email: 'cite9233@naver.com',
+        buyer_name:'박선준',
+        buyer_tel: '010-1234-5678',
+
+    }, function (rsp) {
+        console.log(rsp);
+        if (rsp.success) {
+        var msg = '결제가 완료되었습니다.';
+        msg += '고유ID : ' + rsp.imp_uid;
+        msg += '상점 거래ID : ' + rsp.merchant_uid;
+        msg += '결제 금액 : ' + rsp.paid_amount;
+        msg += '카드 승인번호 : ' + rsp.apply_num;
+        $.ajax({
+        type: "POST",
+        url: "/cash/cash/point", //충전 금액값을 보낼 url 설정
+        data: {
+        "amount" : money
+    },
+    });
+    } else {
+        var msg = '결제에 실패하였습니다.';
+        msg += '에러내용 : ' + rsp.error_msg;
+    }
+        alert(msg);
+
+        totalAmount += parseInt(money);
+        console.log(totalAmount);
+        $("#totalAmountOutput").text(totalAmount);
+    });
+    });
+
 </script>
 </html>
