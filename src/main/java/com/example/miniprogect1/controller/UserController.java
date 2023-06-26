@@ -3,16 +3,11 @@ package com.example.miniprogect1.controller;
 import com.example.miniprogect1.domain.Member;
 import com.example.miniprogect1.domain.MemberService;
 import com.example.miniprogect1.repository.MemberRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import lombok.Data;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 
 @Controller
@@ -31,6 +26,11 @@ public class UserController {
     @GetMapping("/join")
     public String joinView() {
         return "join";
+    }
+
+    @GetMapping("/homeP")
+    public String homePView(){
+        return "MiniHomePage";
     }
 
     //회원가입 처리
@@ -57,10 +57,11 @@ public class UserController {
         try {
             if (memberService.authenticate(member.getUserName(), member.getPassword())) {
                 // 인증 성공
-                // 세션 등에 로그인 정보를 저장하고, 접근 권한을 부여할 수 있습니다.
+                // 세션 등에 로그인 정보를 저장하고, 접근 권한을 부여할 수 있다.
                 // 로그인 성공 알림창
                 redirectAttributes.addFlashAttribute("successMessage", "로그인 성공! HELLO WORLD :)");
-                return "home";
+                //로그인 성공시 띄어질 창
+                return "loadingToMain";
             } else {
                 // 인증 실패
                 // 로그인 실패 알림창
@@ -75,6 +76,8 @@ public class UserController {
             return "/login";
         }
     }
+
+    //로딩페이지를 위한 로그인 성공여부 참거짓 반환 메소드
 
 
 
